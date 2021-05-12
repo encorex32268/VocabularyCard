@@ -64,8 +64,12 @@ dependencies {
 
 
     //flipView
-    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:3.0.0'
     //colorpicker
     implementation 'com.pes.materialcolorpicker:library:1.2.5'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 
 }

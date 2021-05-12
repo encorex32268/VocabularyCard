@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment" >
 
-    <TextView
-        android:id="@+id/homeNameTextView"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/homeBottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_home_bottom"
+        android:clickable="true"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeFloatingActionButton"
@@ -27,4 +28,14 @@
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeBottomNavigationView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
