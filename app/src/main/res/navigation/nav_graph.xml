@@ -3,30 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.lihan.vocabularycard.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit"
-            app:popEnterAnim="@anim/fragment_fade_enter"
-            app:popExitAnim="@anim/fragment_fade_exit" />
-    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.lihan.vocabularycard.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
-        <argument
-            android:name="username"
-            android:defaultValue="Unkown"
-            app:argType="string" />
         <action
             android:id="@+id/action_homeFragment_to_createFragment"
             app:destination="@id/createFragment"
@@ -40,4 +23,9 @@
         android:name="com.lihan.vocabularycard.CreateFragment"
         android:label="fragment_create"
         tools:layout="@layout/fragment_create" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.lihan.vocabularycard.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
