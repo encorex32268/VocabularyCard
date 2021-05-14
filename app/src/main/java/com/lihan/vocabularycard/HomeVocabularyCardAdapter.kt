@@ -17,9 +17,9 @@ class HomeVocabularyCardAdapter(var vocabularys: ArrayList<Vocabulary>)  : Recyc
     override fun onBindViewHolder(holder: HomeVocabularyCardViewHolder, position: Int) {
         holder.bindTo(vocabularys[position])
         holder.itemView.tag = position
-//        holder.itemView.setOnClickListener {
-//            holder.flip()
-//        }
+        holder.itemView.setOnClickListener {
+            holder.flip()
+        }
     }
 
 }

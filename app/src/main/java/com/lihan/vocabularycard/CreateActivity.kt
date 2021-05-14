@@ -20,7 +20,7 @@ class CreateActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityCreateBinding
     private lateinit var tag : Tag
-
+    private val TAG = CreateActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateBinding.inflate(layoutInflater)
@@ -95,10 +95,17 @@ class CreateActivity : AppCompatActivity() {
                     back = createCardBackVocabularyExplain.text.toString()
                     tag = tag
                 }
+                val nowList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_NOWLIST)
+                Log.d(TAG, "onCreate: ${nowList.size}")
+                nowList.add(vocabulary)
+                saveVocabularyListSharedPreferences(nowList,SHAREDPREFERENCES_NOWLIST)
+
                 val vocabularyList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_VOCABULARYLIST)
                 vocabularyList.add(vocabulary)
                 saveVocabularyListSharedPreferences(vocabularyList, SHAREDPREFERENCES_VOCABULARYLIST)
+
                 finish()
+
             }
         }
 
