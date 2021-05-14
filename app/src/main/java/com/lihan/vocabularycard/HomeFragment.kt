@@ -1,5 +1,6 @@
 package com.lihan.vocabularycard
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -50,8 +51,9 @@ class HomeFragment : Fragment() {
         binding.apply {
 
             homeFloatingActionButton.setOnClickListener {
-                val action = HomeFragmentDirections.actionHomeFragmentToCreateFragment()
-                view.findNavController().navigate(action)
+//                val action = HomeFragmentDirections.actionHomeFragmentToCreateFragment()
+//                view.findNavController().navigate(action)
+                startActivity(Intent(requireContext(),CreateActivity::class.java))
             }
 
             homeRecyclerView.apply {

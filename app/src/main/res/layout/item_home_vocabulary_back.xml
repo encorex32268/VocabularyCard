@@ -27,7 +27,6 @@
                 android:id="@+id/itemHomeBackTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="蘋果"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
