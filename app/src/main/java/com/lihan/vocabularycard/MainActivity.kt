@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val TAG = MainActivity::class.java.simpleName
-    private var drawerControlIsOpen = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,8 +33,14 @@ class MainActivity : AppCompatActivity() {
 
 
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_Ad,R.id.nav_about,R.id.nav_all,R.id.nav_now,R.id.nav_settings
+            R.id.homeFragment,
+            R.id.allFragment,
+            R.id.settingsFragment,
+            R.id.adFragment,
+            R.id.aboutFragment
         ),mainDrawerLayout)
+//            supportActionBar?.displayOptions = 0
+            setupActionBarWithNavController(navController,appBarConfiguration)
             appBarMain.mainToolbar.setNavigationIcon(R.drawable.ic_drawer_menu)
             appBarMain.mainToolbar.setNavigationOnClickListener {
                 if (mainDrawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -43,33 +48,10 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     mainDrawerLayout.open()
                 }
-                drawerControlIsOpen = !drawerControlIsOpen
             }
-            mainNavigationView.setItemIconTintList(null);
+            mainNavigationView.itemIconTintList = null;
             mainNavigationView.setupWithNavController(navController)
-            mainNavigationView.setNavigationItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.nav_Ad -> {
-                        Log.d(TAG, "onCreate: ad  ")
-                        true
-                    }
-                    R.id.nav_about -> {
-                        true
-                    }
-                    R.id.nav_all -> {
-                        true
-                    }
-                    R.id.nav_now -> {
-                        true
-                    }
-                    R.id.nav_settings -> {
-                            true
-                    }
-                    else -> {
-                    false
-                    }
-                }
-            }
+
 
         }
 

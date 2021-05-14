@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment" >
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/homeBottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_home_bottom"
-        android:clickable="true"
-        />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeFloatingActionButton"
         android:layout_width="wrap_content"
@@ -36,6 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeBottomNavigationView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

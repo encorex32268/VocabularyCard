@@ -49,22 +49,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-//            homeBottomNavigationView.itemIconTintList = null
-            homeBottomNavigationView.setOnNavigationItemSelectedListener {
-                when(it.itemId){
-                    R.id.action_Now ->{
-
-                        true
-                    }
-                    R.id.action_All->{
-                        true
-                    }
-                    R.id.action_Ok->{
-                        true
-                    }
-                    else->false
-                }
-            }
             homeFloatingActionButton.setOnClickListener {
                 val action = HomeFragmentDirections.actionHomeFragmentToCreateFragment()
                 view.findNavController().navigate(action)

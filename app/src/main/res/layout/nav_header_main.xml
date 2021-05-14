@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Kevilen"
+        android:text="Ken"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/avatarsImageView"
         app:layout_constraintStart_toEndOf="@+id/avatarsImageView" />
