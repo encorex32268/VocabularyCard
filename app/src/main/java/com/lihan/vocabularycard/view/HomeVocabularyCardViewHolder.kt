@@ -1,7 +1,8 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.view
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.lihan.vocabularycard.model.Vocabulary
 import com.lihan.vocabularycard.databinding.ItemHomeVocabularyBackBinding
 import com.lihan.vocabularycard.databinding.ItemHomeVocabularyBinding
 import com.lihan.vocabularycard.databinding.ItemHomeVocabularyFrontBinding

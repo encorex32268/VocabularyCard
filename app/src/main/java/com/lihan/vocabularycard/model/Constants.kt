@@ -1,4 +1,4 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.model
 
 const val SHAREDPREFERENCES_DATA = "UserData"
 const val SHAREDPREFERENCES_VOCABULARYLIST = "vocabularyList"

@@ -1,10 +1,12 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.lihan.vocabularycard.model.SHAREDPREFERENCES_NOWLIST
+import com.lihan.vocabularycard.model.Vocabulary
+import com.lihan.vocabularycard.model.getVocabularyListSharedPreferences
 import java.util.ArrayList
 
 class HomeFragmentViewModel(application: Application) : AndroidViewModel(application){

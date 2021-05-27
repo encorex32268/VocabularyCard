@@ -1,4 +1,4 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.model
 
 import android.app.Activity
 import android.app.Application
@@ -50,11 +50,11 @@ fun Fragment.getTagListSharedPreferences(key: String?): ArrayList<Tag> {
     val type = object : TypeToken<ArrayList<Tag>>() {}.type
     return gson.fromJson(json, type)?:ArrayList<Tag>()
 }
-fun Fragment.getTagObject() : Tag{
+fun Fragment.getTagObject() : Tag {
     val prefs = requireContext().getSharedPreferences(SHAREDPREFERENCES_DATA, Context.MODE_PRIVATE)
     val gson = Gson()
     val json: String = prefs.getString(SHAREDPREFERENCES_TAG, "")?:""
-    return gson.fromJson(json, Tag::class.java)?:Tag()
+    return gson.fromJson(json, Tag::class.java)?: Tag()
 }
 
 fun Activity.saveTagObject(tag: Tag){
@@ -65,11 +65,11 @@ fun Activity.saveTagObject(tag: Tag){
     editor.commit()
 }
 
-fun Activity.getTagObject() : Tag{
+fun Activity.getTagObject() : Tag {
     val prefs = getSharedPreferences(SHAREDPREFERENCES_DATA, Context.MODE_PRIVATE)
     val gson = Gson()
     val json: String = prefs.getString(SHAREDPREFERENCES_TAG, "")?:""
-    return gson.fromJson(json, Tag::class.java)?:Tag()
+    return gson.fromJson(json, Tag::class.java)?: Tag()
 }
 
 fun Activity.getTagListSharedPreferences(key: String?): ArrayList<Tag> {

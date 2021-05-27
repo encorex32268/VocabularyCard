@@ -1,4 +1,4 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

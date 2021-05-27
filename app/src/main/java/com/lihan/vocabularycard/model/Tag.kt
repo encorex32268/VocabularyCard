@@ -1,4 +1,4 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.model
 
 data class Tag(
     var color : Int,

@@ -1,19 +1,17 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
-import android.view.ViewConfiguration
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
-import com.google.android.material.navigation.NavigationView
+import com.lihan.vocabularycard.R
+import com.lihan.vocabularycard.model.SHAREDPREFERENCES_NOWLIST
+import com.lihan.vocabularycard.model.SHAREDPREFERENCES_VOCABULARYLIST
 import com.lihan.vocabularycard.databinding.ActivityMainBinding
+import com.lihan.vocabularycard.model.saveVocabularyListSharedPreferences
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding

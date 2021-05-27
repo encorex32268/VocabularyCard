@@ -1,10 +1,9 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.activity
 
 import android.graphics.Rect
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -12,8 +11,10 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import com.lihan.vocabularycard.*
 import com.lihan.vocabularycard.databinding.ActivityCreateBinding
+import com.lihan.vocabularycard.model.*
+import com.lihan.vocabularycard.viewmodel.HomeFragmentViewModel
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker
 
 
@@ -100,9 +101,11 @@ class CreateActivity : AppCompatActivity() {
                 }
                 val nowList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_NOWLIST)
                 nowList.add(vocabulary)
-                saveVocabularyListSharedPreferences(nowList,SHAREDPREFERENCES_NOWLIST)
+                saveVocabularyListSharedPreferences(nowList, SHAREDPREFERENCES_NOWLIST)
 
-                val vocabularyList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_VOCABULARYLIST)
+                val vocabularyList = getVocabularyListSharedPreferences(
+                    SHAREDPREFERENCES_VOCABULARYLIST
+                )
                 vocabularyList.add(vocabulary)
                 saveVocabularyListSharedPreferences(vocabularyList, SHAREDPREFERENCES_VOCABULARYLIST)
                 setResult(RESULT_OK)

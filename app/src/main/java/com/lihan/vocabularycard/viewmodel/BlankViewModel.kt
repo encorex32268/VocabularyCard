@@ -1,4 +1,4 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.viewmodel
 
 import androidx.lifecycle.ViewModel
 

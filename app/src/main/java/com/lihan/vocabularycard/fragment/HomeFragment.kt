@@ -1,9 +1,8 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.fragment
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.lihan.vocabularycard.activity.CreateActivity
+import com.lihan.vocabularycard.model.Vocabulary
 import com.lihan.vocabularycard.databinding.FragmentHomeBinding
+import com.lihan.vocabularycard.model.SHAREDPREFERENCES_NOWLIST
+import com.lihan.vocabularycard.model.getVocabularyListSharedPreferences
+import com.lihan.vocabularycard.model.saveVocabularyListSharedPreferences
+import com.lihan.vocabularycard.view.HomeVocabularyCardAdapter
+import com.lihan.vocabularycard.viewmodel.HomeFragmentViewModel
 import java.util.*
 
 
@@ -81,7 +87,7 @@ class HomeFragment : Fragment() {
         binding.apply {
 
             homeFloatingActionButton.setOnClickListener {
-                startActivityForResult(Intent(requireContext(),CreateActivity::class.java),CREATEACTIVITY_REQEUST_CODE)
+                startActivityForResult(Intent(requireContext(), CreateActivity::class.java),CREATEACTIVITY_REQEUST_CODE)
             }
             homeRecyclerView.apply {
 

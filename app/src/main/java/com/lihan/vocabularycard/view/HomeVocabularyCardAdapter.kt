@@ -1,8 +1,10 @@
-package com.lihan.vocabularycard
+package com.lihan.vocabularycard.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.lihan.vocabularycard.R
+import com.lihan.vocabularycard.model.Vocabulary
 
 class HomeVocabularyCardAdapter(var vocabularys: ArrayList<Vocabulary>)  : RecyclerView.Adapter<HomeVocabularyCardViewHolder>(){
     override fun onCreateViewHolder(

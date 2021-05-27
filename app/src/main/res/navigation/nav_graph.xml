@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.lihan.vocabularycard.HomeFragment"
+        android:name="com.lihan.vocabularycard.fragment.HomeFragment"
         android:label="Now"
         tools:layout="@layout/fragment_home">
         <action
@@ -25,22 +25,22 @@
         tools:layout="@layout/fragment_create" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.lihan.vocabularycard.SettingsFragment"
+        android:name="com.lihan.vocabularycard.fragment.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/adFragment"
-        android:name="com.lihan.vocabularycard.AdFragment"
+        android:name="com.lihan.vocabularycard.fragment.AdFragment"
         android:label="fragment_ad"
         tools:layout="@layout/fragment_ad" />
     <fragment
         android:id="@+id/allFragment"
-        android:name="com.lihan.vocabularycard.AllFragment"
+        android:name="com.lihan.vocabularycard.fragment.AllFragment"
         android:label="fragment_all"
         tools:layout="@layout/fragment_all" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.lihan.vocabularycard.AboutFragment"
+        android:name="com.lihan.vocabularycard.fragment.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>
