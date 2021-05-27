@@ -12,6 +12,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.lihan.vocabularycard.databinding.ActivityCreateBinding
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker
 
@@ -21,6 +22,8 @@ class CreateActivity : AppCompatActivity() {
     private lateinit var binding : ActivityCreateBinding
     private lateinit var tag : Tag
     private val TAG = CreateActivity::class.java.simpleName
+    private lateinit var viewModel : HomeFragmentViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateBinding.inflate(layoutInflater)
@@ -96,14 +99,13 @@ class CreateActivity : AppCompatActivity() {
                     tag = tag
                 }
                 val nowList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_NOWLIST)
-                Log.d(TAG, "onCreate: ${nowList.size}")
                 nowList.add(vocabulary)
                 saveVocabularyListSharedPreferences(nowList,SHAREDPREFERENCES_NOWLIST)
 
                 val vocabularyList = getVocabularyListSharedPreferences(SHAREDPREFERENCES_VOCABULARYLIST)
                 vocabularyList.add(vocabulary)
                 saveVocabularyListSharedPreferences(vocabularyList, SHAREDPREFERENCES_VOCABULARYLIST)
-
+                setResult(RESULT_OK)
                 finish()
 
             }
@@ -126,6 +128,7 @@ class CreateActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    //touch other place , to hide keyboard
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         if (event.action == MotionEvent.ACTION_DOWN) {
             val v: View? = currentFocus
@@ -133,7 +136,6 @@ class CreateActivity : AppCompatActivity() {
                 val outRect = Rect()
                 v.getGlobalVisibleRect(outRect)
                 if (!outRect.contains(event.rawX.toInt(), event.rawY.toInt())) {
-                    Log.d("focus", "touchevent")
                     v.clearFocus()
                     val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0)

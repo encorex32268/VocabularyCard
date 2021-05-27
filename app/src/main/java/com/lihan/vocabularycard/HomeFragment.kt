@@ -1,5 +1,6 @@
 package com.lihan.vocabularycard
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -63,12 +64,15 @@ class HomeFragment : Fragment() {
         }
 
     }
+
+    private val CREATEACTIVITY_CODE = 101
+    private val CREATEACTIVITY_REQEUST_CODE = 1101
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
-        Log.d(TAG, "onCreateView: ")
         return binding.root
     }
 
@@ -77,7 +81,7 @@ class HomeFragment : Fragment() {
         binding.apply {
 
             homeFloatingActionButton.setOnClickListener {
-                startActivity(Intent(requireContext(),CreateActivity::class.java))
+                startActivityForResult(Intent(requireContext(),CreateActivity::class.java),CREATEACTIVITY_REQEUST_CODE)
             }
             homeRecyclerView.apply {
 
@@ -89,18 +93,23 @@ class HomeFragment : Fragment() {
             val mItemTouchHelper = ItemTouchHelper(itemTouchHelper)
             mItemTouchHelper.attachToRecyclerView(homeRecyclerView)
 
-            viewModel = ViewModelProvider(requireActivity()).get(HomeFragmentViewModel::class.java)
+            viewModel = ViewModelProvider(
+            requireActivity()).get(HomeFragmentViewModel::class.java)
             viewModel.getVocabularys().observe(requireActivity(),
                 Observer<ArrayList<Vocabulary>> {
                     mAdapter.vocabularys = it
                     mAdapter.notifyDataSetChanged()
-                    Log.d(TAG, "onViewCreated: ${it.size}")
                 })
         }
 
     }
 
-
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == CREATEACTIVITY_REQEUST_CODE && resultCode == RESULT_OK){
+            viewModel.refresh()
+        }
+    }
 
 
 

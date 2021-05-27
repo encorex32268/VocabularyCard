@@ -13,15 +13,16 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     init {
         loadData()
     }
-
     fun getVocabularys(): LiveData<ArrayList<Vocabulary>> {
         return vocabularys
     }
-
     private fun loadData() {
         vocabularys.postValue(getVocabularyListSharedPreferences(SHAREDPREFERENCES_NOWLIST))
     }
 
+    fun refresh(){
+        loadData()
+    }
 
 
 

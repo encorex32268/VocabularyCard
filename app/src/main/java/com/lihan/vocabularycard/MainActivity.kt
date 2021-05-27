@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.mainToolbar)
-
+        initData()
         binding.apply {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -79,4 +79,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    fun initData(){
+        saveVocabularyListSharedPreferences(arrayListOf(), SHAREDPREFERENCES_VOCABULARYLIST)
+        saveVocabularyListSharedPreferences(arrayListOf(), SHAREDPREFERENCES_NOWLIST)
+    }
 }
